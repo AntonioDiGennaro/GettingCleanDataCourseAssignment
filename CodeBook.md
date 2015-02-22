@@ -53,3 +53,26 @@ The column with the calculation of the mean is renamed and then the activity lab
 ---
 
 As a last step, the script writes the data frame final_df into a text file to allow then the upload as requested by the course assignment.
+
+## List of Variables ##
+
+* activity_labels: data frame used to keep the table with the association between activity ids and activity labels;
+
+* features: data frame used to keep the table with the association between feature ids and feature labels;
+
+* test: data frame used to keep the raw test data and then reused to keep the test data with 2 additional columns for the subject and activity;
+
+* train: data frame used to keep the raw train data and then reused to keep the train data with 2 additional columns for the subject and activity;
+
+* one: append of test and train data frames;
+
+* one_sc: data frame with a subset of columns with respect to one data frame, only those carrying a mean or a standard deviation; 
+
+* one_sc_label: data frame with activity labels;
+
+* tidy_df: data frame obtained unpivoting the one_sc data set using the gather function
+
+* final_df: data frame with the mean of measures by subject and activity;
+
+* final_df_label: same as final_df but with activity labels instead of ids.
+

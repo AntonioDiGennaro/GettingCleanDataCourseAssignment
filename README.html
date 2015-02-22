@@ -61,59 +61,14 @@ img {
 
 
 
-<div id="codebook" class="section level1">
-<h1>Codebook</h1>
-<p>This is a code book that describes the variables, the data, and any transformations or work performed to clean up the data.</p>
-<div id="assumption" class="section level2">
-<h2>Assumption</h2>
-<p>run_analysis.R assumes that the .zip file containing the raw data has been downloaded and unzipped in the current working directory.</p>
-</div>
-<div id="step-by-step" class="section level2">
-<h2>Step by Step</h2>
-<p>It will issue a message on the console at some significant points to show progress.</p>
-<p>It starts loading 2 data frames:</p>
-<ol style="list-style-type: decimal">
-<li>activity_labels;</li>
-<li>features.</li>
-</ol>
-<p>It proceeds then to load the data frames test and train with similar instructions:</p>
-<ol style="list-style-type: decimal">
-<li>it loads the raw data;</li>
-<li>it loads the activity data;</li>
-<li>it loads the subject data;</li>
-<li>it assembles the data frame adding the activity, subject and all the raw data columns in this order.</li>
-</ol>
-<p>It then appends the train and test data sets into a data frame called one.</p>
-<p>This fulfills STEP #1 of the assignment.</p>
-<hr />
-<p>It identifies in the ‘one’ data frame the columns whose name contains either ‘mean’ or ‘std’ using a simple regular expression it creates another data frame called ‘one_sc’ ( where sc stands for selected columns) with only such columns.</p>
-<p>This fulfills STEP #2 of the assignment.</p>
-<hr />
-<p>It then joins ‘one_sc’ with ‘activity_labels’ to replace the numeric activity IDs with a more descriptive name.</p>
-<p>This fulfills STEP #3 of the assignment.</p>
-<hr />
-<p>It then generates a ‘tidy_df’ data frame, to convert columns with values for a specific measure into rows, so that each row has one single observation of variable. The columns are already appropriately labelled and this fulfills STEP #4 of the assignment.</p>
-<hr />
-<p>Finally, the data frame is processed using the ddply function, to split it into groups with the same subject, activity_label and measure to calculate the mean on the value column and then reassemble the results into a data frame called final_df.</p>
-<p>The column with the calculation of the mean is renamed and then the activity labels data frame merged to fulfill STEP #5 of the assignment.</p>
-<hr />
-<p>As a last step, the script writes the data frame final_df into a text file to allow then the upload as requested by the course assignment.</p>
-</div>
-<div id="list-of-variables" class="section level2">
-<h2>List of Variables</h2>
-<ul>
-<li><p>activity_labels: data frame used to keep the table with the association between activity ids and activity labels;</p></li>
-<li><p>features: data frame used to keep the table with the association between Feature ids and feature labels;</p></li>
-<li><p>test: data frame used to keep the raw test data and then reused to keep the test data with 2 additional columns for the subject and activity;</p></li>
-<li><p>train: data frame used to keep the raw train data and then reused to keep the train data with 2 additional columns for the subject and activity;</p></li>
-<li><p>one: append of test and train data frames;</p></li>
-<li><p>one_sc: data frame with a subset of columns with respect to one data frame, only those carrying a mean or a standard deviation;</p></li>
-<li><p>one_sc_label: data frame with activity labels;</p></li>
-<li><p>tidy_df: data frame obtained unpivoting the one_sc data set using the gather function</p></li>
-<li><p>final_df: data frame with the mean of measures by subject and activity;</p></li>
-<li><p>final_df_label: same as final_df but with activity labels instead of ids.</p></li>
-</ul>
-</div>
+<div id="readme-file" class="section level1">
+<h1>README file</h1>
+<p>This repository contains the files needed for the complete the Project assignment for the course Getting Clean Data.</p>
+<p>There is only one .R file in this repository called run_analysis.R</p>
+<p>run_analysis() is a function that takes no parameters.</p>
+<p>It works based on the assumption that the raw data zip file has been downloaded and unzipped in the current working directory.</p>
+<p>It fulfills the requirements of the assignment and finally output the data set to be uploaded to the coursera course web site for grading into a text file called step5_ds.txt.</p>
+<p>There is also a CodeBook.md file that describe more in details the variables and code used to transform the data.</p>
 </div>
 
 
